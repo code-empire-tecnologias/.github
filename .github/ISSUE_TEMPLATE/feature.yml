@@ -1,0 +1,104 @@
+name: ✨ Feature
+description: Proponha uma capacidade de produto com valor e critérios de aceite claros.
+title: "[FEAT] "
+labels:
+  - enhancement
+projects:
+  - code-empire-tecnologias/1
+body:
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domínio
+      options:
+        - Auth
+        - Families
+        - Accounts
+        - Transactions
+        - Bills
+        - Budgets
+        - Goals
+        - Connections / Open Finance
+        - Statements
+        - Platform
+        - Docs
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema e valor
+      description: Que necessidade existe, para quem, e por que vale resolvê-la agora?
+    validations:
+      required: true
+
+  - type: textarea
+    id: story
+    attributes:
+      label: História do usuário
+      placeholder: Como [papel], quero [capacidade], para [benefício].
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo funcional
+      description: Comportamentos incluídos, regras de negócio e o que fica fora desta entrega.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Use cenários objetivos e verificáveis.
+      placeholder: |
+        - Dado que ..., quando ..., então ...
+        - Dado que ..., quando ..., então ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_data
+    attributes:
+      label: Impacto em API e dados
+      description: Rotas, DTOs, eventos, schema/migração Prisma, compatibilidade e idempotência.
+      placeholder: Sem impacto, ou descreva contratos e persistência afetados.
+    validations:
+      required: true
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Autorização, segurança e privacidade
+      description: Papéis permitidos/negados, visibilidade, dados sensíveis e cenários de abuso.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Estratégia de testes
+      description: Casos unitários, integração/e2e, bordas, permissões e regressão.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências e observabilidade
+      description: EPIC pai, integrações, flags, logs, métricas, rollout e documentação.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Pronto para triagem
+      options:
+        - label: Não incluí segredos, tokens, credenciais ou dados bancários reais.
+          required: true
+        - label: Pesquisei issues existentes para evitar duplicidade.
+          required: true

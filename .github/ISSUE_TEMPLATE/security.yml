@@ -1,0 +1,111 @@
+name: 🛡️ Segurança e hardening
+description: Planeje controles preventivos, conformidade e redução de risco conhecida.
+title: "[SECURITY] "
+labels:
+  - security
+projects:
+  - code-empire-tecnologias/1
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Este formulário é para melhorias planejadas de segurança.
+        **Não descreva aqui uma vulnerabilidade explorável, credencial ou incidente ativo.**
+        Use **Report a vulnerability** na aba Security do repositório afetado.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área de controle
+      options:
+        - Autenticação e sessão
+        - Autorização e visibilidade de dados
+        - Validação e serialização
+        - CORS, cookies, CSRF e headers HTTP
+        - Rate limiting e prevenção de abuso
+        - Segredos e criptografia
+        - Dependências e supply chain
+        - Logs, auditoria e resposta a incidentes
+        - Open Finance e integrações externas
+        - LGPD, retenção e exclusão
+    validations:
+      required: true
+
+  - type: dropdown
+    id: owasp
+    attributes:
+      label: Referência OWASP API Security
+      multiple: true
+      options:
+        - API1 - Broken Object Level Authorization
+        - API2 - Broken Authentication
+        - API3 - Broken Object Property Level Authorization
+        - API4 - Unrestricted Resource Consumption
+        - API5 - Broken Function Level Authorization
+        - API6 - Unrestricted Access to Sensitive Business Flows
+        - API7 - Server Side Request Forgery
+        - API8 - Security Misconfiguration
+        - API9 - Improper Inventory Management
+        - API10 - Unsafe Consumption of APIs
+        - Não se aplica diretamente
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo de segurança
+      description: Qual propriedade deve ser garantida ou qual risco deve ser reduzido?
+    validations:
+      required: true
+
+  - type: textarea
+    id: threat
+    attributes:
+      label: Ameaça e impacto
+      description: Descreva o cenário de abuso em alto nível, ativos afetados e impacto, sem detalhes exploráveis.
+    validations:
+      required: true
+
+  - type: textarea
+    id: controls
+    attributes:
+      label: Controles propostos
+      description: Controles preventivos, detectivos e de recuperação; inclua alternativas consideradas.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite e testes negativos
+      description: Inclua papéis permitidos/negados, tentativas de abuso, falha segura e não exposição de dados.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: operations
+    attributes:
+      label: Operação e resposta
+      description: Logs sem dados sensíveis, alertas, métricas, runbook, rollout e rollback.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Referências e dependências
+      description: Normas, documentação, EPIC pai, decisões e integrações relacionadas.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Divulgação responsável
+      options:
+        - label: Esta issue não contém exploit, segredo, credencial, dado pessoal ou dado bancário real.
+          required: true

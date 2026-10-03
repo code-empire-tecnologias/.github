@@ -1,0 +1,99 @@
+name: 🐛 Bug
+description: Relate um comportamento incorreto ou uma regressão reproduzível.
+title: "[BUG] "
+labels:
+  - bug
+projects:
+  - code-empire-tecnologias/1
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Não publique segredos, tokens, credenciais, payloads bancários reais ou dados pessoais.
+        Para vulnerabilidade ativa, use **Report a vulnerability** na aba Security do
+        repositório afetado.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidade percebida
+      options:
+        - S1 - indisponibilidade, perda de dados ou risco financeiro
+        - S2 - função principal bloqueada sem contorno
+        - S3 - impacto parcial com contorno
+        - S4 - impacto baixo ou cosmético
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Ambiente
+      options:
+        - Produção
+        - Homologação
+        - Desenvolvimento local
+        - Testes automatizados / CI
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Comportamento atual e impacto
+      description: O que acontece e quem ou quais dados são afetados?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Enviar ...
+        2. Consultar ...
+        3. Observar ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidências sanitizadas
+      description: Logs, respostas, IDs fictícios ou screenshots sem dados pessoais e sem credenciais.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto técnico
+      description: Versão/commit, rota, papel familiar, origem do dado e frequência do problema.
+    validations:
+      required: true
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regressão e teste esperado
+      description: Funcionava antes? Qual teste deve impedir que o problema volte?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Verificações
+      options:
+        - label: Removi segredos, tokens, credenciais e dados bancários/pessoais das evidências.
+          required: true
+        - label: Pesquisei issues existentes para evitar duplicidade.
+          required: true

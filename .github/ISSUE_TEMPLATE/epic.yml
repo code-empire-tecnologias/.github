@@ -1,0 +1,128 @@
+name: 🗺️ EPIC
+description: Planeje uma iniciativa ampla, com resultado mensurável e decomposição em features.
+title: "[EPIC] "
+labels:
+  - epic
+projects:
+  - code-empire-tecnologias/1
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use EPIC para uma iniciativa grande que será decomposta em features, bugs e tarefas.
+        Descreva o resultado esperado, não apenas uma lista de implementações.
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domínio principal
+      description: Área do produto mais impactada pela iniciativa.
+      options:
+        - Autenticação e segurança
+        - Famílias e membros
+        - Contas
+        - Lançamentos
+        - Contas a pagar
+        - Orçamentos
+        - Metas
+        - Open Finance e conexões
+        - Importação de extratos
+        - Plataforma e infraestrutura
+        - Experiência transversal
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Resultado esperado
+      description: Qual mudança observável para usuários ou para o negócio este EPIC deve produzir?
+      placeholder: Ao concluir este EPIC, as famílias conseguirão...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou oportunidade
+      description: Contexto, evidências e limitação atual que justificam o investimento.
+    validations:
+      required: true
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: Público e jornadas afetadas
+      description: Quem se beneficia e quais jornadas, papéis familiares ou integrações mudam?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo
+      description: Liste capacidades incluídas e fronteiras importantes.
+      placeholder: |
+        Inclui:
+        - ...
+
+        Não inclui:
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: Métricas e critérios de sucesso
+      description: Defina indicadores verificáveis, baseline quando existir e meta desejada.
+      placeholder: |
+        - Indicador: ...
+          Baseline: ...
+          Meta: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Segurança, privacidade e autorização
+      description: Considere LGPD, dados financeiros, papéis/permissões, abuso, auditoria e retenção.
+      placeholder: Riscos identificados e controles necessários...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências, riscos e decisões abertas
+      description: Integrações, migrações, custos, dúvidas e condições que podem alterar o plano.
+    validations:
+      required: true
+
+  - type: textarea
+    id: breakdown
+    attributes:
+      label: Decomposição inicial
+      description: Liste features ou entregas candidatas. Converta-as em sub-issues após a triagem.
+      value: |
+        - [ ] Descoberta/decisão técnica
+        - [ ] Implementação principal
+        - [ ] Testes e cenários de autorização
+        - [ ] Observabilidade e documentação
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definição de concluído
+      description: Condições para encerrar o EPIC, incluindo rollout, testes e documentação.
+      value: |
+        - [ ] Features previstas concluídas ou explicitamente retiradas do escopo
+        - [ ] Critérios de sucesso medidos
+        - [ ] Riscos de segurança e privacidade revisados
+        - [ ] Documentação e contratos de API atualizados
+        - [ ] Rollout e monitoramento validados
+    validations:
+      required: true

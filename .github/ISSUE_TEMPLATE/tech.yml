@@ -1,0 +1,74 @@
+name: 🛠️ Melhoria técnica
+description: Registre dívida técnica, confiabilidade, desempenho ou manutenibilidade.
+title: "[TECH] "
+labels:
+  - tech-debt
+projects:
+  - code-empire-tecnologias/1
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoria
+      options:
+        - Arquitetura
+        - Confiabilidade
+        - Observabilidade
+        - Desempenho
+        - Banco de dados
+        - Experiência de desenvolvimento
+        - CI/CD e infraestrutura
+        - Dependências
+        - Documentação técnica
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema atual
+      description: Evidência da dívida ou limitação, incluindo custo e risco de mantê-la.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Resultado técnico esperado
+      description: Como saberemos que a melhoria foi concluída e trouxe benefício?
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Abordagem proposta
+      description: Mudança sugerida, alternativas consideradas e motivos da escolha.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Compatibilidade, migração e rollback
+      description: Impactos em API/dados, estratégia de rollout, rollback e riscos operacionais.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verificação
+      description: Testes, benchmarks, métricas ou evidências que comprovam a melhoria.
+    validations:
+      required: true
